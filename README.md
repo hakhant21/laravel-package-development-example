@@ -19,7 +19,7 @@ class ExampleController extends Controller
     {
         // fetch all data
         $data = Fetch::getAll($url, $method);
-        return view('example', compact('data'));
+        return view('example.index', compact('data'));
     }
 
     public function show()
@@ -27,6 +27,13 @@ class ExampleController extends Controller
         // fetch single data
         $data = Fetch::getOne($url, $method);
         return view('example.show', compact('data'));
+    }
+
+    public function create()
+    {
+        // create data
+        $data = Fetch::create($url, $method, $parameters);
+        return view('example.index', compact('data'));
     }
 }
 ```
