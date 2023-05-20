@@ -13,7 +13,7 @@ class FetchServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton('Fetch', function(){
+        $this->app->singleton('Fetch', function($app){
             return new Fetch();
         });
     }
