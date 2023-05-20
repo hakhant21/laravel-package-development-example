@@ -35,4 +35,16 @@ class Fetch
             return $e->getMessage();
          }
     }
+
+    public function create(string $url, $method, array $parameters = [])
+    {
+        try{
+            $res = $this->client->request($method, $url, [
+                'json' => $parameters
+            ])->getBody()->getContents();
+            return json_decode($res, true);
+        }catch(GuzzleException $e) {
+            return $e->getMessage();
+        }
+    }
 }
