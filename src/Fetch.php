@@ -16,7 +16,7 @@ class Fetch
         ]);   
     }
 
-    public function getPosts(string $url,string $method)
+    public function getAll(string $url,string $method)
     {
         try {
             $res = $this->client->request($method, $url)->getBody()->getContents();
@@ -26,7 +26,7 @@ class Fetch
          }
     }
 
-    public function getPost(string $url, $method)
+    public function getOne(string $url, $method)
     {
         try {
             $res = $this->client->request($method, $url)->getBody()->getContents();
