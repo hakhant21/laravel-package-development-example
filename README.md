@@ -19,14 +19,14 @@ class ExampleController extends Controller
     {
         // fetch all data
         $data = Fetch::getAll($url, $method);
-        return view('example', compact($data));
+        return view('example', compact(data));
     }
 
     public function show()
     {
         // fetch single data
         $data = Fetch::getOne($url, $method);
-        return view('example.show', compact($data));
+        return view('example.show', compact(data));
     }
 }
 ```
